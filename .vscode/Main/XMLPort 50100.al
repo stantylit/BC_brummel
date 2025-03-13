@@ -1,4 +1,4 @@
-XmlPort 50100 "Ratings Import"
+XmlPort 66100 "Ratings Import"
 {
     UseDefaultNamespace = true;
     FormatEvaluate = Xml;

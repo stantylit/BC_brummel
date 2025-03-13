@@ -33,7 +33,7 @@
 //                     "Invoice Disc. Code" := "No.";
 //             end;
 //         }
-//         field(2; Name; Text[50])
+//         field(2; Name; Text[66])
 //         {
 //             Caption = 'Name';
 
@@ -43,19 +43,19 @@
 //                     "Search Name" := Name;
 //             end;
 //         }
-//         field(3; "Search Name"; Code[50])
+//         field(3; "Search Name"; Code[66])
 //         {
 //             Caption = 'Search Name';
 //         }
-//         field(4; "Name 2"; Text[50])
+//         field(4; "Name 2"; Text[66])
 //         {
 //             Caption = 'Name 2';
 //         }
-//         field(5; Address; Text[50])
+//         field(5; Address; Text[66])
 //         {
 //             Caption = 'Address';
 //         }
-//         field(6; "Address 2"; Text[50])
+//         field(6; "Address 2"; Text[66])
 //         {
 //             Caption = 'Address 2';
 //         }
@@ -74,7 +74,7 @@
 //                 PostCode.ValidateCity(City, "Post Code", County, "Country/Region Code", (CurrFieldNo <> 0) and GuiAllowed);
 //             end;
 //         }
-//         field(8; Contact; Text[50])
+//         field(8; Contact; Text[66])
 //         {
 //             Caption = 'Contact';
 
@@ -1114,7 +1114,7 @@
 //             Caption = 'Image';
 //             ExtendedDatatype = Person;
 //         }
-//         field(150; "Privacy Blocked"; Boolean)
+//         field(166; "Privacy Blocked"; Boolean)
 //         {
 //             Caption = 'Privacy Blocked';
 
@@ -1136,7 +1136,7 @@
 //             Caption = 'Cash Flow Payment Terms Code';
 //             TableRelation = "Payment Terms";
 //         }
-//         field(5049; "Primary Contact No."; Code[20])
+//         field(6649; "Primary Contact No."; Code[20])
 //         {
 //             Caption = 'Primary Contact No.';
 //             TableRelation = Contact;
@@ -1194,7 +1194,7 @@
 //                         Clear(Image);
 //             end;
 //         }
-//         field(5050; "Contact Type"; Option)
+//         field(6666; "Contact Type"; Option)
 //         {
 //             Caption = 'Contact Type';
 //             OptionCaption = 'Company,Person';
@@ -1220,7 +1220,7 @@
 //             Caption = 'Responsibility Center';
 //             TableRelation = "Responsibility Center";
 //         }
-//         field(5750; "Shipping Advice"; Option)
+//         field(5766; "Shipping Advice"; Option)
 //         {
 //             AccessByPermission = TableData "Sales Shipment Header" = R;
 //             Caption = 'Shipping Advice';
@@ -1544,7 +1544,7 @@
 //                 UpdateTaxAreaCode;
 //             end;
 //         }
-//         field(9004; "Tax Area Display Name"; Text[50])
+//         field(9004; "Tax Area Display Name"; Text[66])
 //         {
 //             CalcFormula = Lookup ("Tax Area".Description WHERE (Code = FIELD ("Tax Area Code")));
 //             Caption = 'Tax Area Display Name';
@@ -1556,7 +1556,7 @@
 //         {
 //             Caption = 'Contact ID';
 //         }
-//         field(9006; "Contact Graph Id"; Text[250])
+//         field(9006; "Contact Graph Id"; Text[266])
 //         {
 //             Caption = 'Contact Graph Id';
 //         }
@@ -1997,7 +1997,7 @@
 //     end;
 
 //     [Scope('Personalization')]
-//     procedure GetPrivacyBlockedGenericErrorText(Cust2: Record Customer): Text[250]
+//     procedure GetPrivacyBlockedGenericErrorText(Cust2: Record Customer): Text[266]
 //     begin
 //         exit(StrSubstNo(PrivacyBlockedGenericTxt, Cust2."No."));
 //     end;
@@ -2400,7 +2400,7 @@
 //         Customer.MarkedOnly(true);
 //     end;
 
-//     procedure CreateNewCustomer(CustomerName: Text[50]; ShowCustomerCard: Boolean): Code[20]
+//     procedure CreateNewCustomer(CustomerName: Text[66]; ShowCustomerCard: Boolean): Code[20]
 //     var
 //         Customer: Record Customer;
 //         MiniCustomerTemplate: Record "Mini Customer Template";
@@ -2622,7 +2622,7 @@
 //         end;
 //     end;
 
-//     procedure SetAddress(CustomerAddress: Text[50]; CustomerAddress2: Text[50]; CustomerPostCode: Code[20]; CustomerCity: Text[30]; CustomerCounty: Text[30]; CustomerCountryCode: Code[10]; CustomerContact: Text[50])
+//     procedure SetAddress(CustomerAddress: Text[66]; CustomerAddress2: Text[66]; CustomerPostCode: Code[20]; CustomerCity: Text[30]; CustomerCounty: Text[30]; CustomerCountryCode: Code[10]; CustomerContact: Text[66])
 //     begin
 //         Address := CustomerAddress;
 //         "Address 2" := CustomerAddress2;

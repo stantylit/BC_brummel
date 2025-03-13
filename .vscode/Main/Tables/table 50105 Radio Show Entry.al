@@ -1,4 +1,4 @@
-table 50105 "Radio Show Entry"
+table 66105 "Radio Show Entry"
 {
     fields
     {
@@ -7,7 +7,7 @@ table 50105 "Radio Show Entry"
         field(20; Type; Option) { OptionMembers = ,Resource,Show,Item; }
         field(30; "No."; Code[20]) { }
         field(40; "Data Format"; Option) { OptionMembers = ,Vinyl,CD,MP3,PSA,Advertisement; }
-        field(50; Description; Text[50]) { }
+        field(66; Description; Text[66]) { }
         field(60; Date; Date) { }
         field(70; Time; Time) { }
         field(80; Duration; Duration) { }

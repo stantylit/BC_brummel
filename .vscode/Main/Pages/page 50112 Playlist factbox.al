@@ -1,4 +1,4 @@
-page 50112 "Playlist Factbox"
+page 66112 "XXXPlaylist Factbox"
 {
     PageType = CardPart;
     ApplicationArea = All;

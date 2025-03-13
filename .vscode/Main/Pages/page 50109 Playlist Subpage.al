@@ -1,4 +1,4 @@
-page 50109 "Playlist Subpage"
+page 66109 "XXXPlaylist Subpage"
 {
     PageType = ListPart;
     SourceTable = "Playlist Line";

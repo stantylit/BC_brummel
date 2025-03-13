@@ -1,4 +1,4 @@
-table 50103 "Playlist Line"
+table 66103 "Playlist Line"
 {
     fields
     {
@@ -7,15 +7,15 @@ table 50103 "Playlist Line"
         field(10; Type; Option) { OptionMembers = ,Resource,Show,Item; }
         field(20; "No."; Code[20])
         {
-            TableRelation = IF (Type = const (Resource)) Resource."No."
+            TableRelation = IF (Type = const(Resource)) Resource."No."
             ELSE
-            IF (Type = const (Show)) "Radio Show"."No."
+            IF (Type = const(Show)) "Radio Show"."No."
             ELSE
-            IF (Type = const (Item)) Item."No.";
+            IF (Type = const(Item)) Item."No.";
         }
         field(30; "Data Format"; Option) { OptionMembers = ,Vinyl,CD,MP3,PSA,Advertisement; }
         field(40; "Publisher Code"; Code[10]) { }
-        field(50; Description; Text[50]) { }
+        field(66; Description; Text[66]) { }
         field(60; Duration; Duration)
         {
             Editable = false;

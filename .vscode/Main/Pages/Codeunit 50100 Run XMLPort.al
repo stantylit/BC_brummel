@@ -1,10 +1,10 @@
-codeunit 50100 "Run XMLPort"
+codeunit 66100 "Run XMLPort"
 {
     trigger OnRun()
     begin
         // XMLfile.Create(rec.TEMPORARYPATH + 'RadioShowExport.xml');
         // XMLfile.CreateOutStream(OutStream);
-        // XMLPORT.Export(50000, OutStream);
+        // XMLPORT.Export(66000, OutStream);
         // FromFileName := XMLfile.Name;
         // ToFileName := 'RadioShowExport.xml';
         // XMLfile.Close();

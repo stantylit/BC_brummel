@@ -1,9 +1,9 @@
-page 50103 "Playlist Document List"
+page 66103 "XXXPlaylist Document List"
 {
     PageType = List;
     SourceTable = "Playlist Header";
     ApplicationArea = Basic;
-    CardPageId = "Playlist Document";
+    CardPageId = "XXXPlaylist Document";
     UsageCategory = Documents;
     layout
     {

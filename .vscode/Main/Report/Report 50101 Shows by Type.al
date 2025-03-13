@@ -1,4 +1,4 @@
-report 50101 "Shows by Type"
+report 66101 "Shows by Type"
 {
     DefaultLayout = Word;
     WordLayout = './Shows by Type.docx';
@@ -13,16 +13,16 @@ report 50101 "Shows by Type"
             column(Description_RadioShowType; Description) { IncludeCaption = true; }
             dataitem(RadioShow; "Radio Show")
             {
-                DataItemLink = "Radio Show Type" = FIELD (Code);
-                DataItemTableView = SORTING ("Radio Show Type");
+                DataItemLink = "Radio Show Type" = FIELD(Code);
+                DataItemTableView = SORTING("Radio Show Type");
                 PrintOnlyIfDetail = true;
                 column(No_RadioShow; "No.") { IncludeCaption = true; }
                 column(Name_RadioShow; Name) { IncludeCaption = true; }
                 column(RunTime_RadioShow; "Run Time") { IncludeCaption = true; }
                 dataitem(PlaylistHeader; "Playlist Header")
                 {
-                    DataItemLink = "Radio Show No." = FIELD ("No.");
-                    DataItemTableView = SORTING ("No.");
+                    DataItemLink = "Radio Show No." = FIELD("No.");
+                    DataItemTableView = SORTING("No.");
                     column(PostingDate_PlaylistHeader; "Broadcast Date") { IncludeCaption = true; }
                     column(StartTime_PlaylistHeader; "Start Time") { IncludeCaption = true; }
                 }

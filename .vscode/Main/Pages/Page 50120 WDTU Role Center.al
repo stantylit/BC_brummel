@@ -1,4 +1,4 @@
-page 50120 "WDTU Role Center"
+page 66120 "WDTU Role Center"
 {
     Caption = 'Sales Order Processor', Comment = '{Dependency=Match,"ProfileDescription_ORDERPROCESSOR"}';
     PageType = RoleCenter;
@@ -11,7 +11,7 @@ page 50120 "WDTU Role Center"
             {
                 ApplicationArea = Basic, Suite;
             }
-            part(Control1901851508; "SO Processor Activities")
+            part(Control1901851668; "SO Processor Activities")
             {
                 AccessByPermission = TableData "Sales Shipment Header" = R;
                 ApplicationArea = Basic, Suite;
@@ -73,7 +73,7 @@ page 50120 "WDTU Role Center"
                 ApplicationArea = Basic, Suite;
                 Caption = 'Shipped Not Invoiced';
                 RunObject = Page "Sales Order List";
-                RunPageView = WHERE ("Shipped Not Invoiced" = CONST (true));
+                RunPageView = WHERE("Shipped Not Invoiced" = CONST(true));
                 ToolTip = 'View sales documents that are shipped but not yet invoiced.';
             }
             action(SalesOrdersComplShtNotInv)
@@ -81,8 +81,8 @@ page 50120 "WDTU Role Center"
                 ApplicationArea = Basic, Suite;
                 Caption = 'Completely Shipped Not Invoiced';
                 RunObject = Page "Sales Order List";
-                RunPageView = WHERE ("Completely Shipped" = CONST (true),
-                                    "Shipped Not Invoiced" = CONST (true));
+                RunPageView = WHERE("Completely Shipped" = CONST(true),
+                                    "Shipped Not Invoiced" = CONST(true));
                 ToolTip = 'View sales documents that are fully shipped but not fully invoiced.';
             }
             action(Items)
@@ -106,8 +106,8 @@ page 50120 "WDTU Role Center"
                 ApplicationArea = Basic, Suite;
                 Caption = 'Item Journals';
                 RunObject = Page "Item Journal Batches";
-                RunPageView = WHERE ("Template Type" = CONST (Item),
-                                    Recurring = CONST (false));
+                RunPageView = WHERE("Template Type" = CONST(Item),
+                                    Recurring = CONST(false));
                 ToolTip = 'Post item transactions directly to the item ledger to adjust inventory in connection with purchases, sales, and positive or negative adjustments without using documents. You can save sets of item journal lines as standard journals so that you can perform recurring postings quickly. A condensed version of the item journal function exists on item cards for quick adjustment of an items inventory quantity.';
             }
             action(SalesJournals)
@@ -115,8 +115,8 @@ page 50120 "WDTU Role Center"
                 ApplicationArea = Basic, Suite;
                 Caption = 'Sales Journals';
                 RunObject = Page "General Journal Batches";
-                RunPageView = WHERE ("Template Type" = CONST (Sales),
-                                    Recurring = CONST (false));
+                RunPageView = WHERE("Template Type" = CONST(Sales),
+                                    Recurring = CONST(false));
                 ToolTip = 'Post any sales-related transaction directly to a customer, bank, or general ledger account instead of using dedicated documents. You can post all types of financial sales transactions, including payments, refunds, and finance charge amounts. Note that you cannot post item quantities with a sales journal.';
             }
             action(CashReceiptJournals)
@@ -125,8 +125,8 @@ page 50120 "WDTU Role Center"
                 Caption = 'Cash Receipt Journals';
                 Image = Journals;
                 RunObject = Page "General Journal Batches";
-                RunPageView = WHERE ("Template Type" = CONST ("Cash Receipts"),
-                                    Recurring = CONST (false));
+                RunPageView = WHERE("Template Type" = CONST("Cash Receipts"),
+                                    Recurring = CONST(false));
                 ToolTip = 'Register received payments by manually applying them to the related customer, vendor, or bank ledger entries. Then, post the payments to G/L accounts and thereby close the related ledger entries.';
             }
             action("Transfer Orders")
@@ -177,8 +177,8 @@ page 50120 "WDTU Role Center"
                     ApplicationArea = Suite;
                     Caption = 'Sales Orders - Microsoft Dynamics 365 for Sales';
                     RunObject = Page "CRM Sales Order List";
-                    RunPageView = WHERE (StateCode = FILTER (Submitted),
-                                        LastBackofficeSubmit = FILTER (0D));
+                    RunPageView = WHERE(StateCode = FILTER(Submitted),
+                                        LastBackofficeSubmit = FILTER(0D));
                     ToolTip = 'View sales orders in Dynamics 365 for Sales that are coupled with sales orders in Business Central.';
                 }
                 action("Blanket Sales Orders")
@@ -225,8 +225,8 @@ page 50120 "WDTU Role Center"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE ("Template Type" = CONST (Sales),
-                                        Recurring = CONST (false));
+                    RunPageView = WHERE("Template Type" = CONST(Sales),
+                                        Recurring = CONST(false));
                     ToolTip = 'Post any sales-related transaction directly to a customer, bank, or general ledger account instead of using dedicated documents. You can post all types of financial sales transactions, including payments, refunds, and finance charge amounts. Note that you cannot post item quantities with a sales journal.';
                 }
                 action("Posted Sales Invoices")
@@ -363,8 +363,8 @@ page 50120 "WDTU Role Center"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE ("Template Type" = CONST (Purchases),
-                                        Recurring = CONST (false));
+                    RunPageView = WHERE("Template Type" = CONST(Purchases),
+                                        Recurring = CONST(false));
                     ToolTip = 'Post any purchase-related transaction directly to a vendor, bank, or general ledger account instead of using dedicated documents. You can post all types of financial purchase transactions, including payments, refunds, and finance charge amounts. Note that you cannot post item quantities with a purchase journal.';
                 }
                 action("Posted Purchase Invoices")
@@ -417,8 +417,8 @@ page 50120 "WDTU Role Center"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Item Journal Batches";
-                    RunPageView = WHERE ("Template Type" = CONST (Item),
-                                        Recurring = CONST (false));
+                    RunPageView = WHERE("Template Type" = CONST(Item),
+                                        Recurring = CONST(false));
                     ToolTip = 'Post item transactions directly to the item ledger to adjust inventory in connection with purchases, sales, and positive or negative adjustments without using documents. You can save sets of item journal lines as standard journals so that you can perform recurring postings quickly. A condensed version of the item journal function exists on item cards for quick adjustment of an items inventory quantity.';
                 }
                 action("Item Charges")
@@ -449,8 +449,8 @@ page 50120 "WDTU Role Center"
                     ApplicationArea = Warehouse;
                     Caption = 'Item Reclassification Journals';
                     RunObject = Page "Item Journal Batches";
-                    RunPageView = WHERE ("Template Type" = CONST (Transfer),
-                                        Recurring = CONST (false));
+                    RunPageView = WHERE("Template Type" = CONST(Transfer),
+                                        Recurring = CONST(false));
                     ToolTip = 'Change information on item ledger entries, such as dimensions, location codes, bin codes, and serial or lot numbers.';
                 }
                 action("Phys. Inventory Journals")
@@ -458,8 +458,8 @@ page 50120 "WDTU Role Center"
                     ApplicationArea = Warehouse;
                     Caption = 'Phys. Inventory Journals';
                     RunObject = Page "Item Journal Batches";
-                    RunPageView = WHERE ("Template Type" = CONST ("Phys. Inventory"),
-                                        Recurring = CONST (false));
+                    RunPageView = WHERE("Template Type" = CONST("Phys. Inventory"),
+                                        Recurring = CONST(false));
                     ToolTip = 'Select how you want to maintain an up-to-date record of your inventory at different locations.';
                 }
                 action("Assembly Orders")
@@ -478,7 +478,7 @@ page 50120 "WDTU Role Center"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Sales Lines";
-                    RunPageView = WHERE ("Drop Shipment" = CONST (true));
+                    RunPageView = WHERE("Drop Shipment" = CONST(true));
                     ToolTip = 'Minimize delivery time and inventory cost by having items shipped from your vendor directly to your customer. This simply requires that you mark the sales order for drop shipment and then create a linked purchase order with the customer specified as the recipient. ';
                 }
                 action(Locations)
@@ -598,121 +598,121 @@ page 50120 "WDTU Role Center"
                     RunObject = Page "Assisted Setup";
                     ToolTip = 'Set up core functionality such as sales tax, sending documents as email, and approval workflow by running through a few pages that guide you through the information.';
                 }
-                action("Manual Setup")
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Manual Setup';
-                    RunObject = Page "Business Setup";
-                    ToolTip = 'Define your company policies for business departments and for general activities by filling setup windows manually.';
-                }
-                action(General)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'General';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (General));
-                    ToolTip = 'Fill in your official company information, and define general codes and information that is used across the business functionality, such as currencies and languages. ';
-                }
-                action(Finance)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Finance';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Finance));
-                    ToolTip = 'Define your general accounting policies, such as the allowed posting period and how payments are processed. Set up your default dimensions for financial analysis.';
-                }
-                action(Sales)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Sales';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Sales));
-                    ToolTip = 'Define your general policies for sales invoicing and returns, such as when to show credit and stockout warnings and how to post sales discounts. Set up your number series for creating customers and different sales documents.';
-                }
-                action(Purchasing)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Purchasing';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Purchasing));
-                    ToolTip = 'Define your general policies for purchase invoicing and returns, such as whether to require vendor invoice numbers and how to post purchase discounts. Set up your number series for creating vendors and different purchase documents.';
-                }
-                action(Jobs)
-                {
-                    ApplicationArea = Jobs;
-                    Caption = 'Jobs';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Jobs));
-                    ToolTip = 'Define a project activity by creating a job card with integrated job tasks and job planning lines, structured in two layers. The job task enables you to set up job planning lines and to post consumption to the job. The job planning lines specify the detailed use of resources, items, and various general ledger expenses.';
-                }
-                action("Fixed Assets")
-                {
-                    ApplicationArea = FixedAssets;
-                    Caption = 'Fixed Assets';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER ("Fixed Assets"));
-                    ToolTip = 'Manage periodic depreciation of your machinery or machines, keep track of your maintenance costs, manage insurance policies related to fixed assets, and monitor fixed asset statistics.';
-                }
-                action(HR)
-                {
-                    ApplicationArea = BasicHR;
-                    Caption = 'HR';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (HR));
-                    ToolTip = 'Set up number series for creating new employee cards and define if employment time is measured by days or hours.';
-                }
-                action(Inventory)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Inventory';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Inventory));
-                    ToolTip = 'Define your general inventory policies, such as whether to allow negative inventory and how to post and adjust item costs. Set up your number series for creating new inventory items or services.';
-                }
-                action(Service)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Service';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Service));
-                    ToolTip = 'Configure your company policies for service management.';
-                }
-                action(System)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'System';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (System));
-                    ToolTip = 'System';
-                }
-                action("Relationship Management")
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Relationship Management';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER ("Relationship Mngt"));
-                    ToolTip = 'Set up business relations, configure sales cycles, campaigns, and interactions, and define codes for various marketing communication.';
-                }
-                action(Intercompany)
-                {
-                    ApplicationArea = Intercompany;
-                    Caption = 'Intercompany';
-                    RunObject = Page "Business Setup";
-                    RunPageView = SORTING (Name)
-                                  WHERE (Area = FILTER (Intercompany));
-                    ToolTip = 'Configure intercompany processes, such as the inbox and outbox for business documents exchanged within your group.';
-                }
+                // action("Manual Setup")
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Manual Setup';
+                //     RunObject = Page "Business Setup";
+                //     ToolTip = 'Define your company policies for business departments and for general activities by filling setup windows manually.';
+                // }
+                // action(General)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'General';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (General));
+                //     ToolTip = 'Fill in your official company information, and define general codes and information that is used across the business functionality, such as currencies and languages. ';
+                // }
+                // action(Finance)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Finance';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Finance));
+                //     ToolTip = 'Define your general accounting policies, such as the allowed posting period and how payments are processed. Set up your default dimensions for financial analysis.';
+                // }
+                // action(Sales)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Sales';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Sales));
+                //     ToolTip = 'Define your general policies for sales invoicing and returns, such as when to show credit and stockout warnings and how to post sales discounts. Set up your number series for creating customers and different sales documents.';
+                // }
+                // action(Purchasing)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Purchasing';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Purchasing));
+                //     ToolTip = 'Define your general policies for purchase invoicing and returns, such as whether to require vendor invoice numbers and how to post purchase discounts. Set up your number series for creating vendors and different purchase documents.';
+                // }
+                // action(Jobs)
+                // {
+                //     ApplicationArea = Jobs;
+                //     Caption = 'Jobs';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Jobs));
+                //     ToolTip = 'Define a project activity by creating a job card with integrated job tasks and job planning lines, structured in two layers. The job task enables you to set up job planning lines and to post consumption to the job. The job planning lines specify the detailed use of resources, items, and various general ledger expenses.';
+                // }
+                // action("Fixed Assets")
+                // {
+                //     ApplicationArea = FixedAssets;
+                //     Caption = 'Fixed Assets';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER ("Fixed Assets"));
+                //     ToolTip = 'Manage periodic depreciation of your machinery or machines, keep track of your maintenance costs, manage insurance policies related to fixed assets, and monitor fixed asset statistics.';
+                // }
+                // action(HR)
+                // {
+                //     ApplicationArea = BasicHR;
+                //     Caption = 'HR';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (HR));
+                //     ToolTip = 'Set up number series for creating new employee cards and define if employment time is measured by days or hours.';
+                // }
+                // action(Inventory)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Inventory';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Inventory));
+                //     ToolTip = 'Define your general inventory policies, such as whether to allow negative inventory and how to post and adjust item costs. Set up your number series for creating new inventory items or services.';
+                // }
+                // action(Service)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Service';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Service));
+                //     ToolTip = 'Configure your company policies for service management.';
+                // }
+                // action(System)
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'System';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (System));
+                //     ToolTip = 'System';
+                // }
+                // action("Relationship Management")
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     Caption = 'Relationship Management';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER ("Relationship Mngt"));
+                //     ToolTip = 'Set up business relations, configure sales cycles, campaigns, and interactions, and define codes for various marketing communication.';
+                // }
+                // action(Intercompany)
+                // {
+                //     ApplicationArea = Intercompany;
+                //     Caption = 'Intercompany';
+                //     RunObject = Page "Business Setup";
+                //     RunPageView = SORTING (Name)
+                //                   WHERE (Area = FILTER (Intercompany));
+                //     ToolTip = 'Configure intercompany processes, such as the inbox and outbox for business documents exchanged within your group.';
+                // }
                 action("Service Connections")
                 {
                     ApplicationArea = Basic, Suite;
@@ -919,14 +919,14 @@ page 50120 "WDTU Role Center"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Radio Shows';
                     Image = AddToHome;
-                    RunObject = Page "Radio Show List";
+                    //  RunObject = Page "Radio Show List";
                 }
                 action(Playlists)
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Playlists';
                     Image = PhysicalInventory;
-                    RunObject = Page "Playlist Document List";
+                    //  RunObject = Page "Playlist Document List";
                 }
             }
         }

@@ -1,8 +1,8 @@
-table 50107 Publisher
+table 66107 Publisher
 {
     fields
     {
         field(1; Code; Code[20]) { }
-        field(10; Description; Text[50]) { }
+        field(10; Description; Text[66]) { }
     }
 }

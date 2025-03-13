@@ -1,4 +1,4 @@
-page 50104 "Playlist Document"
+page 66104 "XXXPlaylist Document"
 {
     PageType = Document;
     SourceTable = "Playlist Header";
@@ -25,7 +25,7 @@ page 50104 "Playlist Document"
                 field("Broadcast Date"; rec."Broadcast Date") { ApplicationArea = Basic; }
                 field(Duration; rec.Duration) { ApplicationArea = Basic; }
             }
-            part(lines; "Playlist Subpage")
+            part(lines; "XXXPlaylist Subpage")
             {
                 SubPageLink = "Document No." = FIELD("No.");
                 SubPageView = SORTING("Document No.", "Line No.");
@@ -34,7 +34,7 @@ page 50104 "Playlist Document"
         }
         area(FactBoxes)
         {
-            part(factbox; "Playlist Factbox")
+            part(factbox; "XXXPlaylist Factbox")
             {
                 SubPageLink = "No." = FIELD("No.");
             }

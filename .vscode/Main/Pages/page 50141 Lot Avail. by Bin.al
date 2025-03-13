@@ -1,4 +1,4 @@
-page 50141 "Lot Avail. by Bin"
+page 66141 "XXXLot Avail. by Bin"
 {
     PageType = List;
     SourceTable = "Warehouse Entry";

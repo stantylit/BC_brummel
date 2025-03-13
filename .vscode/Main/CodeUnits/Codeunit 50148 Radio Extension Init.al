@@ -1,4 +1,4 @@
-codeunit 50148 "Radio Extension Init"
+codeunit 66148 "Radio Extension Init"
 {
 
     trigger OnRun()

@@ -1,4 +1,4 @@
-query 50100 "Lot Avail. by Bin"
+query 66100 "Lot Avail. by Bin"
 {
     QueryType = Normal;
 
@@ -24,7 +24,7 @@ query 50100 "Lot Avail. by Bin"
                     dataitem(Bin_Type; "Bin Type")
                     {
                         DataItemLink = Code = Bin."Bin Type Code";
-                        DataItemTableFilter = Pick = CONST (true);
+                        DataItemTableFilter = Pick = CONST(true);
                     }
                 }
             }

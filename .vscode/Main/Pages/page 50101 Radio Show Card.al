@@ -1,4 +1,4 @@
-page 50101 "Radio Show Card"
+page 66101 "XXXRadio Show Card"
 {
     PageType = Card;
     SourceTable = "Radio Show";

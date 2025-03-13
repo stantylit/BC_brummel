@@ -1,4 +1,4 @@
-report 50102 "Fan Promotion List"
+report 66102 "Fan Promotion List"
 {
     DefaultLayout = Word;
     WordLayout = './FanPromotionList.docx';
@@ -33,9 +33,9 @@ report 50102 "Fan Promotion List"
                     SelectThisFan := TRUE;
                 IF Age19to34 AND (FanAge > 18) AND (FanAge < 35) THEN
                     SelectThisFan := TRUE;
-                IF Age35to50 AND (FanAge > 34) AND (FanAge < 51) THEN
+                IF Age35to66 AND (FanAge > 34) AND (FanAge < 51) THEN
                     SelectThisFan := TRUE;
-                IF AgeOver50 AND (FanAge > 50) THEN
+                IF AgeOver66 AND (FanAge > 66) THEN
                     SelectThisFan := TRUE;
                 IF Male AND (Gender = Gender::Male) THEN
                     SelectThisFan := TRUE;
@@ -59,8 +59,8 @@ report 50102 "Fan Promotion List"
                     field(Age12orLess; Age12orLess) { ApplicationArea = Basic; Caption = 'Age 12 or less'; }
                     field(Age13to18; Age13to18) { ApplicationArea = Basic; Caption = 'Age 13 to 18'; }
                     field(Age19to34; Age19to34) { ApplicationArea = Basic; Caption = 'Age 19 to 34'; }
-                    field(Age35to50; Age35to50) { ApplicationArea = Basic; Caption = 'Age 34 to 50'; }
-                    field(AgeOver50; AgeOver50) { ApplicationArea = Basic; Caption = 'Age over 50'; }
+                    field(Age35to66; Age35to66) { ApplicationArea = Basic; Caption = 'Age 34 to 66'; }
+                    field(AgeOver66; AgeOver66) { ApplicationArea = Basic; Caption = 'Age over 66'; }
                     field(Male; Male) { ApplicationArea = Basic; Caption = 'Male'; }
                     field(Female; Female) { ApplicationArea = Basic; Caption = 'Female'; }
                 }
@@ -73,8 +73,8 @@ report 50102 "Fan Promotion List"
         Age12orLess: Boolean;
         Age13to18: Boolean;
         Age19to34: Boolean;
-        Age35to50: Boolean;
-        AgeOver50: Boolean;
+        Age35to66: Boolean;
+        AgeOver66: Boolean;
         Male: Boolean;
         Female: Boolean;
         SelectThisFan: Boolean;

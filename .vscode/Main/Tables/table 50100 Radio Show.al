@@ -1,13 +1,13 @@
-table 50100 "Radio Show"
+table 66100 "Radio Show"
 {
     fields
     {
         field(1; "No."; Code[20]) { }
         field(10; "Radio Show Type"; Code[10]) { TableRelation = "Radio Show Type"; }
-        field(20; "Name"; Text[50]) { }
+        field(20; "Name"; Text[66]) { }
         field(40; "Run Time"; Duration) { }
-        field(50; "Host Code"; Code[20]) { }
-        field(60; "Host Name"; Text[50]) { }
+        field(66; "Host Code"; Code[20]) { }
+        field(60; "Host Name"; Text[66]) { }
         field(100; "Average Listeners"; Decimal) { }
         field(110; "Audience Share"; Decimal) { }
         field(120; "Advertising Revenue"; Decimal) { }
@@ -17,21 +17,21 @@ table 50100 "Radio Show"
         field(1011; "PSA Count"; Integer)
         {
             FieldClass = FlowField;
-            CalcFormula = count ("Playlist Line" where
-                ("No." = field ("No."), Type = const (Item), "Data Format" = const (PSA)));
+            CalcFormula = count("Playlist Line" where
+                ("No." = field("No."), Type = const(Item), "Data Format" = const(PSA)));
             Editable = false;
         }
         field(1020; "Ads Required"; Boolean) { }
         field(1021; "Ads Count"; Integer)
         {
             FieldClass = FlowField;
-            CalcFormula = count ("Playlist Line" where
-                ("No." = field ("No."), Type = const (Item), "Data Format" = const (Advertisement)));
+            CalcFormula = count("Playlist Line" where
+                ("No." = field("No."), Type = const(Item), "Data Format" = const(Advertisement)));
             Editable = false;
         }
         field(1030; "News Required"; Boolean) { }
         field(1040; "News Duration"; Duration) { }
-        field(1050; "Sports Required"; Boolean) { }
+        field(1066; "Sports Required"; Boolean) { }
         field(1060; "Sports Duration"; Duration) { }
         field(1070; "Weather Required"; Boolean) { }
         field(1080; "Weather Duration"; Duration) { }

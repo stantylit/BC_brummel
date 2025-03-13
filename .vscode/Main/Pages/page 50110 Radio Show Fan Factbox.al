@@ -1,4 +1,4 @@
-page 50110 "Radio Show Fan Factbox"
+page 66110 "XXXRadio Show Fan Factbox"
 {
     PageType = ListPart;
     SourceTable = "Radio Show Fan";

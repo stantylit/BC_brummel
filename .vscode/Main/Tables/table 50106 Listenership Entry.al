@@ -1,4 +1,4 @@
-table 50106 "Listernership Entry"
+table 66106 "Listernership Entry"
 {
     fields
     {
@@ -7,14 +7,14 @@ table 50106 "Listernership Entry"
         field(20; Date; Date) { }
         field(30; "Start Time"; Time) { }
         field(40; "End Time"; Time) { }
-        field(50; "Radio Show No."; Code[20]) { }
+        field(66; "Radio Show No."; Code[20]) { }
         field(60; "Listener Count"; Decimal) { }
         field(70; "Audience Share"; Decimal) { }
-        field(80; "Age Demographic"; Option) { OptionMembers = ,"0-12","13-18","19-34","35-50","51+"; }
+        field(80; "Age Demographic"; Option) { OptionMembers = ,"0-12","13-18","19-34","35-66","51+"; }
     }
-        keys
+    keys
     {
         key(PK; "Entry No.") { Clustered = true; }
-        key(Reporting; "Radio Show No.", Date,"Start Time","Age Demographic") { SumIndexFields = "Listener Count","Audience Share"; }
+        key(Reporting; "Radio Show No.", Date, "Start Time", "Age Demographic") { SumIndexFields = "Listener Count", "Audience Share"; }
     }
 }

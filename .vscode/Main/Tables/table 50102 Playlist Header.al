@@ -1,4 +1,4 @@
-table 50102 "Playlist Header"
+table 66102 "Playlist Header"
 {
     fields
     {
@@ -24,10 +24,10 @@ table 50102 "Playlist Header"
                 end;
             end;
         }
-        field(20; Description; Text[50]) { }
+        field(20; Description; Text[66]) { }
         field(30; "Broadcast Date"; Date) { }
         field(40; Duration; Duration) { }
-        field(50; "Start Time"; Time)
+        field(66; "Start Time"; Time)
         {
             trigger OnValidate()
             var
@@ -53,21 +53,21 @@ table 50102 "Playlist Header"
         field(1011; "PSA Count"; Integer)
         {
             FieldClass = FlowField;
-            CalcFormula = count ("Playlist Line" where
-                ("No." = field ("No."), Type = const (Item), "Data Format" = const (PSA)));
+            CalcFormula = count("Playlist Line" where
+                ("No." = field("No."), Type = const(Item), "Data Format" = const(PSA)));
             Editable = false;
         }
         field(1021; "Ads Count"; Integer)
         {
             FieldClass = FlowField;
-            CalcFormula = count ("Playlist Line" where
-                ("No." = field ("No."), Type = const (Item), "Data Format" = const (Advertisement)));
+            CalcFormula = count("Playlist Line" where
+                ("No." = field("No."), Type = const(Item), "Data Format" = const(Advertisement)));
             Editable = false;
         }
         field(1020; "Ads Required"; Boolean) { }
         field(1030; "News Required"; Boolean) { }
         field(1040; "News Duration"; Duration) { }
-        field(1050; "Sports Required"; Boolean) { }
+        field(1066; "Sports Required"; Boolean) { }
         field(1060; "Sports Duration"; Duration) { }
         field(1070; "Weather Required"; Boolean) { }
         field(1080; "Weather Duration"; Duration) { }
@@ -85,20 +85,21 @@ table 50102 "Playlist Header"
     begin
         PlaylistLine.SetRange("Document No.", "No.");
         PlaylistLine.SetRange(Type, PlaylistLine.Type::Show);
-        if PlaylistLine.FindSet then repeat
-                                         RadioShow.get(PlaylistLine."No.");
-                                         RadioShowType.get(RadioShow."Radio Show Type");
-                                         case Category of
-                                             Category::News:
-                                                 if RadioShowType.Code = 'News' then
-                                                     Cnt += 1;
-                                             Category::Weather:
-                                                 if RadioShowType.Code = 'Weather' then
-                                                     Cnt += 1;
-                                             Category::Sports:
-                                                 if RadioShowType.Code = 'Sports' then
-                                                     Cnt += 1;
-                                         end;
+        if PlaylistLine.FindSet then
+            repeat
+                RadioShow.get(PlaylistLine."No.");
+                RadioShowType.get(RadioShow."Radio Show Type");
+                case Category of
+                    Category::News:
+                        if RadioShowType.Code = 'News' then
+                            Cnt += 1;
+                    Category::Weather:
+                        if RadioShowType.Code = 'Weather' then
+                            Cnt += 1;
+                    Category::Sports:
+                        if RadioShowType.Code = 'Sports' then
+                            Cnt += 1;
+                end;
             until PlaylistLine.Next = 0;
     end;
 }

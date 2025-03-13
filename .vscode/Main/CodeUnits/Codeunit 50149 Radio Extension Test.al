@@ -1,4 +1,4 @@
-codeunit 50149 "Radio Extension Test"
+codeunit 66149 "Radio Extension Test"
 {
     Subtype = Test;
 

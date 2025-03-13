@@ -1,10 +1,10 @@
-page 50100 "Radio Show List"
+page 66100 "XXXRadio Show List"
 {
     PageType = List;
     SourceTable = "Radio Show";
     ApplicationArea = Basic;
     UsageCategory = Lists;
-    CardPageId = "Radio Show Card";
+    CardPageId = "XXXRadio Show Card";
     Editable = false;
 
     layout
@@ -29,7 +29,7 @@ page 50100 "Radio Show List"
         }
         area(FactBoxes)
         {
-            part(Fans; "Radio Show Fan Factbox")
+            part(Fans; "XXXRadio Show Fan Factbox")
             {
                 ApplicationArea = Basic;
                 SubPageLink = "Radio Show No." = field("No.");

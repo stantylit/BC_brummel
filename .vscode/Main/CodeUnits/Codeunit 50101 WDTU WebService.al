@@ -1,4 +1,4 @@
-codeunit 50101 "WDTU Web Service"
+codeunit 66101 "WDTU Web Service"
 {
     procedure ImportRating(RatingsXML: XmlPort "Ratings Import"): Text
     begin
